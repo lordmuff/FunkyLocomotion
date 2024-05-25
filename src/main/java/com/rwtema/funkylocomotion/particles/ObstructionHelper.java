@@ -23,7 +23,7 @@ public class ObstructionHelper {
 
     private static boolean playerHoldingWrench(EntityPlayer thePlayer) {
         return !(thePlayer == null || thePlayer.getHeldItem() == null) &&
-                thePlayer.getHeldItem().getItem() == FunkyLocomotion.wrench && thePlayer.getHeldItem().getItemDamage() == ItemWrench.metaWrenchEye;
+            thePlayer.getHeldItem().getItem() == FunkyLocomotion.wrench && thePlayer.getHeldItem().getItemDamage() == ItemWrench.metaWrenchEye;
     }
 
     public static boolean sendObstructionPacket(World world, BlockPos pos, ForgeDirection dir) {
@@ -37,10 +37,10 @@ public class ObstructionHelper {
 
             if (!playerHoldingWrench(entityplayermp)) continue;
 
-            if (!entityplayermp.loadedChunks.contains(chunkWatcher.chunkLocation)) {
-                if(packet == null) packet = FLNetwork.net.getPacketFrom(new MessageObstruction(pos, dir));
-                entityplayermp.playerNetServerHandler.sendPacket(packet);
-            }
+            //if (!entityplayermp.loadedChunks.contains(chunkWatcher.chunkLocation)) {
+            //    if(packet == null) packet = FLNetwork.net.getPacketFrom(new MessageObstruction(pos, dir));
+            //    entityplayermp.playerNetServerHandler.sendPacket(packet);
+            //}
         }
         return packet != null;
     }

@@ -3,7 +3,6 @@ package com.rwtema.funkylocomotion.blocks;
 import com.rwtema.funkylocomotion.description.DescriptorRegistry;
 import com.rwtema.funkylocomotion.fakes.FakeWorldClient;
 import com.rwtema.funkylocomotion.helper.BlockHelper;
-import com.rwtema.funkylocomotion.rendering.ChunkRerenderer;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import framesapi.BlockPos;
@@ -113,9 +112,6 @@ public class TileMovingClient extends TileMovingBase {
 
 		if (checkClass(this.block) || checkClass(this.tile))
 			this.tile = null;
-
-		if (render && !init)
-			ChunkRerenderer.markBlock(xCoord, yCoord, zCoord);
 
 		init = true;
 	}

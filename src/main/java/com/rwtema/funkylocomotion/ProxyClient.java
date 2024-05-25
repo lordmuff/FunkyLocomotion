@@ -3,7 +3,6 @@ package com.rwtema.funkylocomotion;
 import com.rwtema.funkylocomotion.blocks.TileMovingClient;
 import com.rwtema.funkylocomotion.eventhandler.ClientTimer;
 import com.rwtema.funkylocomotion.fakes.FakeWorldClient;
-import com.rwtema.funkylocomotion.rendering.ChunkRerenderer;
 import com.rwtema.funkylocomotion.rendering.RenderBlockPusher;
 import com.rwtema.funkylocomotion.rendering.RenderBlockSlider;
 import com.rwtema.funkylocomotion.rendering.RenderItemWrench;
@@ -31,7 +30,6 @@ public class ProxyClient extends Proxy {
         MinecraftForgeClient.registerItemRenderer(FunkyLocomotion.wrench, new RenderItemWrench());
         ClientRegistry.bindTileEntitySpecialRenderer(TileMovingClient.class, new TileEntityRenderMoving());
         FMLCommonHandler.instance().bus().register(new ClientTimer());
-		FMLCommonHandler.instance().bus().register(new ChunkRerenderer());
 
         FakeWorldClient.register();
     }
