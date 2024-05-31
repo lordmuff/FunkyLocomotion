@@ -37,9 +37,11 @@ public class ObstructionHelper {
 
             if (!playerHoldingWrench(entityplayermp)) continue;
 
+                if(packet == null) packet = FLNetwork.net.getPacketFrom(new MessageObstruction(pos, dir));
+                entityplayermp.playerNetServerHandler.sendPacket(packet);
+
+
             //if (!entityplayermp.loadedChunks.contains(chunkWatcher.chunkLocation)) {
-            //    if(packet == null) packet = FLNetwork.net.getPacketFrom(new MessageObstruction(pos, dir));
-            //    entityplayermp.playerNetServerHandler.sendPacket(packet);
             //}
         }
         return packet != null;
